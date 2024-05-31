@@ -1,3 +1,4 @@
+import pytest
 from collections import namedtuple
 
 Task = namedtuple('Task', ['summary', 'owner', 'done', 'id'])
@@ -14,7 +15,8 @@ def test_asdict():
         }
     
     assert t_dict == excepted
-    
+
+@pytest.mark.run_these_please    
 def test_replace():
     t_before = Task('finish book', 'brain', False)
     t_after = t_before._replace(id=10, done=True)

@@ -1,3 +1,4 @@
+import pytest
 from collections import namedtuple
 
 Task = namedtuple('Task', ['summary', 'owner', 'done', 'id'])
@@ -8,6 +9,7 @@ def test_defaults():
     t2 = Task(None, None, False, None)
     assert t1 == t2
 
+@pytest.mark.run_these_please
 def test_member_access():
     t = Task('buy milk', 'brain')
     assert t.summary == 'buy milk'
