@@ -1,0 +1,10 @@
+def test_pytestconfig(pytestconfig):
+    print('args:', pytestconfig.args)
+    print('inifile', pytestconfig.inifile)
+    print('inovocation_dir', pytestconfig.invocation_dir)
+    print('rootdir', pytestconfig.rootdir)
+    print('-k xxxx', pytestconfig.getoption('keyword'))
+    print('-v', pytestconfig.getoption('verbose'))
+    print('-q', pytestconfig.getoption('quiet'))
+    print('-l', pytestconfig.getoption('showlocals'))
+    print('--tb=style', pytestconfig.getoption('tbstyle'))
